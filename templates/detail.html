@@ -1,0 +1,11 @@
+<h1>{{ post.title.rendered }}</h1>
+<h3>{{ post.this_fun_field }}</h3>
+<div class="entry-meta" ng-if="post.acf.name">
+    <p>{{ post.acf.name }}</p>
+    <p>{{ post.acf.title }}</p>
+    <img ng-src="{{ post.acf.image }}">
+</div>
+<div class="entry-meta" ng-if="!post.acf.name">
+    <p>No author</p>
+</div>
+<div ng-bind-html="post.content.rendered | to_trusted"></div>
